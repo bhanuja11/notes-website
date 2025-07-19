@@ -1,0 +1,166 @@
+/* Basic Reset & Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the container */
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Container for the entire application */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Max width for the app */
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+/* Note Input Section */
+.note-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-end; /* Align button to the right within flex column */
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:active {
+    transform: translateY(0); /* Return on click */
+}
+
+/* Notes Display Section */
+.notes-display-section {
+    text-align: left; /* Align notes to the left within their container */
+}
+
+#no-notes-message {
+    color: #666;
+    font-style: italic;
+    font-size: 1.1em;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Individual Note Card */
+.note-card {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px; /* Minimum height for better appearance */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.note-content {
+    flex-grow: 1; /* Allows content to take available space */
+    font-size: 1.1em;
+    color: #444;
+    white-space: pre-wrap; /* Preserves whitespace and wraps text */
+    word-wrap: break-word; /* Breaks long words */
+    margin-bottom: 15px;
+}
+
+.note-footer {
+    display: flex;
+    justify-content: flex-end; /* Push delete button to the right */
+    align-items: center;
+    gap: 10px; /* Space between elements in footer if any */
+}
+
+.delete-btn {
+    background-color: #dc3545; /* Red for delete */
+    padding: 8px 15px;
+    font-size: 0.9em;
+    border-radius: 5px; /* Slightly smaller border-radius for delete button */
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        width: 100%; /* Full width button on small screens */
+        align-self: center;
+    }
+
+    .note-card {
+        padding: 15px;
+    }
+
+    .note-content {
+        font-size: 1em;
+    }
+}
